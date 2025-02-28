@@ -1,5 +1,5 @@
-from ..Utils.ConfigColetor import salvar_config
-from ..Utils.PendriveUtil import listar_dispositivos_usb_mac
+from Utils.ConfigColetor import salvar_config
+from Utils.PendriveUtil import listar_dispositivos_usb_mac
 
 def salvar_config_interface(configServ, configColetor, lblStatus):
         ip_servidor = configServ.get()
