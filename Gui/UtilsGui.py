@@ -1,7 +1,7 @@
-from Utils.ConfigColetor import salvar_config
-from Utils.PendriveUtil import listar_dispositivos_usb_mac
+from Utils.ConfigColetor import getConfig
+from Utils.PendriveUtil import listDevices
 
-def salvar_config_interface(configServ, configColetor, lblStatus):
+def saveConfigColetor(configServ, configColetor, lblStatus):
         ip_servidor = configServ.get()
         ip_coletor = configColetor.get()
 
@@ -10,11 +10,11 @@ def salvar_config_interface(configServ, configColetor, lblStatus):
             return
         #funcao que pega os dados
         else:
-            salvar_config(ip_servidor, ip_coletor)
+            getConfig(ip_servidor, ip_coletor)
     
     #Alterar o label responsavel pelo Pendrive
-def alterar_labelPendrive(lblPendrive):
-        pendrive = listar_dispositivos_usb_mac()
+def updateLabelPendrive(lblPendrive):
+        pendrive = listDevices()
 
         if pendrive:
              lblPendrive.config(text=f"Dispositivo encontrado: {pendrive}")

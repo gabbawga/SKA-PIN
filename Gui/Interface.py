@@ -1,5 +1,5 @@
 from tkinter import *
-from .UtilsGui import alterar_labelPendrive, salvar_config_interface
+from .UtilsGui import updateLabelPendrive, saveConfigColetor
 
 def criar_interface():
    
@@ -11,7 +11,7 @@ def criar_interface():
     lblPendrive = Label(root, text="Nenhum dispositivo encontrado")
     lblPendrive.grid(row=0, column=0)
 
-    btnEncontrarPendrive = Button(root, text="Encontrar Pendrive", fg="red", command=lambda: alterar_labelPendrive(lblPendrive))
+    btnEncontrarPendrive = Button(root, text="Encontrar Pendrive", fg="red", command=lambda: updateLabelPendrive(lblPendrive))
     btnEncontrarPendrive.grid(row=0, column=1)
 
     # Servidor Config
@@ -31,7 +31,7 @@ def criar_interface():
     lblStatus = Label(root, text="", fg="black")
     lblStatus.grid(row=9, column=1)
 
-    btnSalvar = Button(root, text="Salvar no pendrive", fg="red", command=lambda: salvar_config_interface(configServ, configColetor, lblStatus))
+    btnSalvar = Button(root, text="Salvar no pendrive", fg="red", command=lambda: saveConfigColetor(configServ, configColetor, lblStatus))
     btnSalvar.grid(row=11, column=1)
 
     root.mainloop()
